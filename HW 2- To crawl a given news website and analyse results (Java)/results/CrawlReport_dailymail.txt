@@ -1,0 +1,29 @@
+Name: Shakshi Gupta
+USC ID: 7386071899
+News site crawled: https://www.dailymail.co.uk/news
+
+Fetch Statistics:
+#fetches attempted: 19998
+#fetches succeeded: 19960
+#fetched failed or aborted: 38
+
+
+Outgoing URLs:
+Total URLs extracted: 17272554
+# unique URLs extracted: 239248
+# unique URLs within News Site: 53424
+# unique URLs outside News Site: 185824
+
+Status Codes:
+200 OK: 19960
+301 Moved Permanently: 19
+302 Moved Temporarily: 18
+404 Not Found: 1
+
+
+File Sizes:
+100KB ~ <1MB: 19960
+
+Content Types:
+text/html: 19960
+

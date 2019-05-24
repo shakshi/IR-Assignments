@@ -1,0 +1,83 @@
+<!doctype html>
+      <html lang="en">
+       <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lipper 2017</title>
+        <link href="//www.reuters.com/media-campaign/lipper/lipper-award2016.css" type="text/css" rel="stylesheet" media="all">
+		<script src="//code.jquery.com/jquery-compat-3.0.0-alpha1.js"></script>
+		<script type="text/javascript" src="//www.reuters.com/media-campaign/lipper/lipper2019.json"></script>
+		</head>
+		
+	<body>
+		
+        
+        <!-- Parse JSon Script (based on URL parameter -->
+<script type="text/javascript">
+
+
+jQuery(document).ready(function(){
+    
+	
+	for (var i=0; i<=ranking_set.funds.length-1; i++){
+		$('.lipperList1').append("<li id='item"+[i]+"'><a href='javascript:void(0);' onclick='javascript:popUnder("+[i]+");'>"+ranking_set.funds[i].classification+"</a></li>");
+	}
+	
+	
+});
+
+function popData(uid){
+	
+	//$('#classification').html(ranking_set.funds[uid].classification);
+	$('#tr_link').html("<a href='https://funds.us.reuters.com/US/funds/overview.asp?symbol=" + ranking_set.funds[uid].symbol+ "' target='_parent' >" + ranking_set.funds[uid].name + " - " + ranking_set.funds[uid].symbol +"</a>");
+	$('#description').html(ranking_set.funds[uid].description);
+	$('#chart').attr("src", "https://funds.us.reuters.com/US/lipper-award-winners/?symbol="+ ranking_set.funds[uid].symbol +"&altstyle=1");		
+
+}
+
+function removeChart(){
+	$('#fund_content').remove();
+	
+}
+
+function popUnder(uid){
+	
+	removeChart();
+	
+	$('#item'+uid).after("<div id='fund_content'></div>");
+	
+	$('#fund_content').html("<div class='lipperWrapperInside int'><div class='lipperInside internal clearfix'><div class='lipperWinnerFunc'><a href='javascript:void(0);removeChart();' class='close'>Close</a></div><div id='lipperWinnerTxt' class='lipperWinnerTxt'><h4 id='tr_link'></h4><p id='description'></p><div class='lipperWinnerChart'><iframe id='chart' width='583' scrolling='no' height='260' frameborder='no' allowtransparency='true'></iframe></div><p class='desc'>Graph represents current value of a $10,000 investment made four years ago.</p></div></div></div>");
+	
+	popData(uid);
+}
+
+
+
+</script>
+        
+        
+        
+    
+
+      
+<div class="clearfix"></div>      
+      
+      <div class="lipperWrapper">
+        <div class="lipper lipperCompany active">
+            <div class="lipperInside clearfix">
+                <div class="lipperTrophyWinner clearfix">Lipper 2019 Trophy Winners</div>
+                <div class="col1">
+                  <ul class="lipperList lipperList1">
+                      
+					</ul>
+                </div>
+              
+            </div>
+        </div>  
+        
+    </div>
+      
+  
+  
+</body></html>
